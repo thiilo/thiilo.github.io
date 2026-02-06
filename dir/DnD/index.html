@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script>
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: DnD | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <h1>DnD Character Sheet</h1>
+                    <i>Sommer 2020</i>
+                    <div class="tags">
+                        <button class="tag">Freizeit</button>
+                        <button class="tag web">Web</button>
+                    </div>
+                </div>
+                <img src="../../res/img/dnd.png">
+            </div>
+
+            <a href="https://homepages.uni-regensburg.de/~hot59097/ptr/" target="_blank">
+                <Button class='doc' style="background-color: #344; color: white;"><i class="fa fa-dice"></i>&nbsp;&nbsp;Website aufrufen ↗</Button>
+            </a>
+    
+            <h3>Hintergrund</h3>
+
+            <p>Ein interaktives, intelligentes Dungeons-and-Dragons Character Sheet. Da ich mit meinen Notizen zur besseren Durchsuchbarkeit und Organisation schon länger papierlos arbeitete, wollte ich nun auch das Dokument mit den Statistiken meines Charakters digitalisieren.</p>
+            <p>Aus unerfindlichen Gründen enschied ich, das als Website zu realisieren. Weil es schnell funktionieren sollte, schrieb ich dieses Spaghetti-Monster mit verschiedenen Grids, Tabellen, <code>contenteditable</code>-Textfeldern und per JS generierten Werten mit <code>localStorage</code>, also client-side-Cookies. Das macht die Seite sehr fragil, weil Fortschritte bei einem anderen Browser oder gelöschter Cache/Cookies verloren gehen.</p>
+            <p>Dafür sieht es aber recht hübsch aus.</p>
+
+            <h3>Projekt</h3>
+            <object class="webview" width="100%" height="1000px" data="https://homepages.uni-regensburg.de/~hot59097/ptr/"></object>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Thilo Hohl">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="res/script.js"></script>
+    <link rel="icon" href="favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Thilos Homepage</title>
+</head>
+
+<body>
+    <div class="headercontainer">
+        <span class="headerarrow">🡒</span>
+        <div class="headerlinks">
+            <a href="#">
+                <h4>Über mich</h4>
+            </a>
+            <a href="#cvSection">
+                <h4>Curriculum Vitae</h4>
+            </a>
+            <a href="#skillsSection">
+                <h4>Kenntnisse</h4>
+            </a>
+            <a href="#projectsSection">
+                <h4>Projekte</h4>
+            </a>
+        </div>
+    </div>
+    <div class="bg">
+        <div class="floating">
+            <div class="unit" id="floatingUnit">
+                <div class="profile">
+                    <div id="profiletext" class="textverticalcenter">
+                        <div style="font-size: 40px; font-weight: 600;">Moin!</div>
+                        <div class="textblock">
+                            <p>Mein Name ist Thilo Hohl und ich bin Software-Entwickler (M.Sc. Medieninformatik).</p>
+                            <p>
+                                Im Studium habe ich mit Grafiken und Logik für Spiele, Studien zu Affordanzen, Sensorik und 3D-Druck-Prototyping für Laborverwaltung und Full-Stack-Entwicklung in verschiedensten Bereichen Erfahrung gesammelt.
+                            </p>
+                            <p>
+                                Mein Interesse liegt vor Allem im Gestalten und Implementieren von Schnittstellen zwischen Mensch und Maschine, egal ob klassisches Web-Interface oder neuartige Inputmodalität.
+                            </p>
+                            <p>
+                                Meine
+                                <a class="textlink" href="/dir/BA2/index.html">Bachelorarbeit</a>
+                                befasste sich mit der spielerischen Anwendung eines gewichtsverändernden Controllers in VR.
+                                <br>Ein Paper der Erkenntnisse daraus hat es in die erste
+                                <a class="textlink" href="https://alpchi.org/programme/#accordion-69860990e1d2d">AlpCHI 2026</a>
+                                geschafft.
+                                <br>
+                                In meiner 
+                                <a class="textlink" href="/dir/MA/index.html">Masterarbeit</a>
+                                habe ich Visualisierungen für Redeanteile gestaltet, die in Gruppentherapien auf den Boden projiziert werden und so die Balance in der Sitzung verbessern können.
+                            </p>
+                        </div>
+                        <p>Hier findet sich ein kleines Archiv meiner bisherigen <a class="textlink" href="#projectsSection">Projekte ↓</a></p>
+                        <br>
+                    </div>
+                    <div id="imagecont" class="textverticalcenter">
+                        <img id="profilepic" src="res/img/profile-crop.jpg" title="Foto von Lea :)">
+                        <div class="logo">
+                            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                <g class="mark"
+                                id="layer1"><path
+                                d="m 29.032472,192.35547 c 0,0 2.145214,3.21851 5.019392,-2.89267 3.031502,-4.97846 49.31854,-169.304548 49.294224,-176.503111 -0.0082,-2.425687 -0.179854,-2.434814 -0.179854,-2.434814"
+                                id="path2" /><path
+                                d="m 10.008078,114.32273 c 0,0 -0.4153229,4.26507 3.508175,3.63966 C 73.89226,108.33841 139.48739,101.46407 189.97895,92.339487"
+                                id="path3" /><path
+                                d="m 68.256608,128.29148 c 0,0 -1.450885,2.79142 2.933446,3.14205 4.384331,0.35063 42.593336,-15.02612 56.487276,-36.65278 14.95421,-23.277041 18.08145,-45.112582 9.76263,-49.662303 -10.87493,-5.947709 -58.303918,15.125191 -59.840703,120.739673 -0.335652,23.06747 21.531161,-20.14453 25.269713,-11.93214 1.56864,3.44581 4.15264,19.2291 6.59839,19.37674 37.64228,2.27238 63.59018,-63.27035 59.5451,-103.19952 C 162.55622,6.3733714 58.782917,4.4073844 35.630867,105.17262 19.971013,173.32939 63.539553,184.4628 63.539553,184.4628"
+                                id="path4" /></g>
+                            </svg>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="card" id="job-posting">
+                <div class="inset-border">
+                    <i class="fa fa-briefcase"></i> Im Moment bin ich ab <b>April 2025</b> auf der Suche nach einer Vollzeitstelle!
+                    <br>
+                    <p style="margin: .5rem 0;">Interessiert wäre ich an den Bereichen</p>
+                    <ul style="padding-inline-start: 0; margin-top: .5rem">
+                        <li>UX-Design,</li>
+                        <li>Front-End-Entwicklung oder</li>
+                        <li>Full-Stack-Entwicklung</li>
+                    </ul>
+                    <i class="fa fa-map"></i> im Raum Regensburg/München oder Remote.
+                    <p style="margin-bottom: 0;">Interesse geweckt?
+                        <a href="mailto:thilo.hohl@gmail.com" class="textlink">
+                            Gerne schreiben! <i class="fa-regular fa-paper-plane"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="caret-down">
+            <a href="#cvSection">
+                <i style="color: var(--colorCaret);" class="ph-3x ph-caret-double-down-light"></i>
+            </a>
+        </div>
+    </div>
+    <div class="unit">
+        <div id="cvSection" class="uber">Curriculum Vitae</div>
+        <div class="tablegrid">
+            <div class="cvDate">01/03/2026</div>
+            <div>
+                <i class="fas fa-file-text"></i> 
+                <b>Publikation in der AlpCHI 2026</b>
+                <br><a class="textlink" href="https://doi.org/10.1145/3780045.3780053">Simulating Avatars' Stamina in Virtual Reality through Weight-Changing Controllers</a>
+                <br>Kalus, Hohl, Hilbrich, Wolf, und Henze (2026):
+            </div>
+            <div class="cvDate">04/2023 – 11/2025</div>
+            <div>
+                <i class="fa fa-graduation-cap"></i> 
+                <b>M.Sc. Medieninformatik</b>
+                <br>Masterstudiengang an der Universität Regensburg, <i class="fas fa-asterisk"></i><b> tbd</b>
+                <br>Thesis: <a class="textlink" href="dir/MA/index.html">Iterative Development of visualisations for a floor-projected verpal participation feedback system in the context of group therapy</a>, <i class="fas fa-asterisk"></i><b> Note tbd</b>.
+            </div>
+            <div class="cvDate">10/2020 – 04/2026</div>
+            <div>
+                <i class="fa fa-briefcase"></i> 
+                <b>Teilzeit/Werkstudent bei <a href="https://www.msvplus.de/"><button class="cvlink">MSVplus ↗</button></a></b>
+                <br>Tätig als Programmierer im Front-End, mit <code>HTML</code> (Bootstrap + Custom), <code>JS</code> und <code>PHP</code>.
+                <br>Gleichzeitig telefonischer und Remote-Support.
+                <br>Zuletzt hauptverantwortlich für Design in umfassender Modernisierung des Interfaces zur Version 5.0.
+            </div>
+            <div class="cvDate">10/2019 – 09/2020</div>
+            <div>
+                <i class="fa fa-user-tie"></i> 
+                <b>Stellv. Referent für Digitalisierung und Modernisierung im AStA</b>
+                <br>Gewählter Vertreter im Allgemeinen Studierendenausschuss der Universität Regensburg
+                <br>Brücke Studierende <-> Rechenzentrum, Verwaltung und Neuanschaffung von Veranstaltungstechnik für Studierende
+            </div>
+            <div class="cvDate">2018 – 2023</div>
+            <div>
+                <i class="fa fa-users"></i> 
+                <b>Aktives Mitglied der Fachschaft SLK</b>
+                <br>Medieninformatik derzeit der Fakultät für Sprach- Literatur- und Kulturwissenschaft untergeordnet
+                <br>Teilnahme an Sitzungen, Planung und Betreuung von studentischen Veranstaltungen
+            </div>
+            <div class="cvDate">10/2018 – 04/2024</div>
+            <div>
+                <i class="fa fa-graduation-cap"></i> 
+                <b>B.A. Medieninformatik</b>
+                <br>Bachelorstudiengang an der Universität Regensburg, <i class="fas fa-asterisk"></i><b> 2,0</b>
+                <br>2. Hauptfach Informationswissenschaft <i class="fa-regular fa-asterisk"></i> 2,4
+                <br>Thesis: <a class="textlink" href="dir/BA2/index.html">Do Weight-Changing Controllers improve Game Experience in VR?</a>, <i class="fas fa-asterisk"></i><b> Note 1,3</b>
+            </div>
+        </div>
+    </div>
+    <div class="unit">
+        <div id="skillsSection" class="uber">Kenntnisse</div>
+        <div class="card" id="skill-legend">
+            <li class="great">Sehr vertraut</li>
+            <li class="good">Komfortabel</li>
+            <li class="alright">Grundkenntnisse</li>
+        </div>
+        <div class="skills">
+            <div class="card">
+                <b class="top">Entwicklung</b>
+                <li class="great">JavaScript</li>
+                <li class="great">HTML (+ Frameworks)</li>
+                <li class="great">CSS</li>
+                <li class="great">Git, GitLab Workflows</li>
+                <li class="great">JQuery</li>
+                <li class="good">Agentic Development (Claude Code)</li>
+                <li class="good">C++ für Arduino</li>
+                <li class="good">Unity für SteamVR</li>
+                <li class="good">Agile Development Practices</li>
+                <li class="good">Docker</li>
+                <li class="good">PHP</li>
+                <li class="good">R</li>
+                <li class="good">Python</li>
+                <li class="good">RegEx</li>
+                <li class="alright">Content-Management-Systeme</li>
+                <li class="alright">Java</li>
+            </div>
+            <div class="card">
+                <b class="top">Betriebssysteme</b>
+                <li class="great">macOS ab Big Sur</li>
+                <li class="good">Windows 8 -> 11</li>
+                <li class="alright">Linux (i3, ubuntu)</li>
+                <br class="br-small">
+                <b>Textverarbeitung</b>
+                <li class="great">LaTeX</li>
+                <li class="great">Markdown</li>
+                <li class="good">FontForge</li>
+                <li class="good">Graphviz</li>
+                <br class="br-small">
+                <b>Soft Skills</b>
+                <li class="great">Deutsch (Muttersprache)</li>
+                <li class="great">Englisch (C1)</li>
+                <li class="good">3D-Druck-Prototyping</li>
+                <li class="good">Microcontroller & Löten</li>
+                <li class="good">Analoge und Digitale Fotografie</li>
+            </div>
+            <div class="card">
+                <b class="top">Medien und Design</b>
+                <li class="great">Adobe Lightroom</li>
+                <li class="great">Inkscape</li>
+                <li class="great">Adobe Photoshop</li>
+                <li class="great">GIMP</li>
+                <li class="good">Adobe Xd</li>
+                <li class="good">Figma</li>
+                <li class="good">Affinity</li>
+                <li class="good">Aseprite</li>
+                <li class="good">Audacity</li>
+                <li class="alright">Blender</li>
+                <li class="alright">Davinci Resolve</li>
+                <li class="alright">Adobe InDesign</li>
+                <li class="alright">Reaper</li>
+            </div>
+        </div>
+    </div>
+    <div class="unit">
+        <div id="projectsSection" class="uber">Projekte</div>
+        <div id="checkbuttons">
+            <button class="checkbutton" id="sort_button" onclick="changeSort()">Nach Zeit sortieren <i id="sort_button_icon" class="fa-solid fa-arrow-down"></i></button>
+            
+            <section>
+                &nbsp;<i class="fas fa-filter"></i>&nbsp;Filter (OR) 
+                <button class="checkbutton" id="uni_button" onclick="checkCheck('uni')"><i class="fas fa-building-columns"></i>&nbsp;Universität</button>
+                <button class="checkbutton" id="freizeit_button" onclick="checkCheck('freizeit')"><i class="fas fa-chalkboard-user"></i>&nbsp;Freizeit</button>
+                <button class="checkbutton" id="web_button" onclick="checkCheck('web')"><i class="fas fa-code"></i>&nbsp;Code</button>
+                <button class="checkbutton" id="forschung_button" onclick="checkCheck('forschung')"><i class="fas fa-book-open-reader"></i>&nbsp;Forschung</button>
+                <button class="checkbutton" id="wip_button" onclick="checkCheck('wip')"><i class="fas fa-person-digging"></i>&nbsp;Work in Progress</button>
+            </section>
+        </div>
+        <div class="Navigation">
+            <div class="card" data-tags="uni web hub">
+                <a href="dir/GameHub/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/gamehub.png">
+                        <div class="cardText">
+                            <h3>GameHub</h3>
+                            <i>Winter 2019/20</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni web">
+                <a href="dir/Salvatore/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/salvatore.jpg">
+                        <div class="cardText">
+                            <h3>Salvatore</h3>
+                            <i>Winter 2019/20</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="freizeit web">
+                <a href="dir/DnD/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/dnd.png">
+                        <div class="cardText">
+                            <h3>Character Sheet</h3>
+                            <i>Sommer 2020</i>
+                            <div class="tags">
+                                <button class="tag freizeit"><i class="fas fa-chalkboard-user"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni forschung hub">
+                <a href="dir/DrumHub/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/DrumHub.png">
+                        <div class="cardText">
+                            <h3>DrumHub</h3>
+                            <i>Winter 2020/2021</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag forschung"><i class="fas fa-book-open-reader"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni forschung">
+                <a href="dir/DungeonHero/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/Dungeon Hero no text.png">
+                        <div class="cardText">
+                            <h3>Dungeon Hero</h3>
+                            <i>Sommer 2021</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag forschung"><i class="fas fa-book-open-reader"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni web">
+                <a href="dir/thilotype/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/Tt.jpg">
+                        <div class="cardText">
+                            <h3>ThiloType</h3>
+                            <i>Sommer 2021</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni forschung web hub">
+                <a href="dir/CookHub/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/Idle.png">
+                        <div class="cardText">
+                            <h3>CookHub</h3>
+                            <i>Winter 2021/2022</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag forschung"><i class="fas fa-book-open-reader"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="freizeit web wip">
+                <a href="dir/Lichtspielabend/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/sketch-bg.jpg">
+                        <div class="cardText">
+                            <h3>Kinowebseite</h3>
+                            <i>Frühling 2022</i>
+                            <div class="tags">
+                                <button class="tag freizeit"><i class="fas fa-chalkboard-user"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                                <button class="tag wip"><i class="fas fa-person-digging"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="web hub wip">
+                <a href="dir/SignageHub/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/SignageHub.jpg">
+                        <div class="cardText">
+                            <h3>SignageHub</h3>
+                            <i>Sommer 2022</i>
+                            <div class="tags">
+                                <button class="tag freizeit"><i class="fas fa-chalkboard-user"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                                <button class="tag wip"><i class="fas fa-person-digging"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="web wip freizeit">
+                <a href="dir/Buttons/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/weblogo.png">
+                        <div class="cardText">
+                            <h3>Button Hover Demo</h3>
+                            <i>Sommer 2022</i>
+                            <div class="tags">
+                                <button class="tag freizeit"><i class="fas fa-chalkboard-user"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                                <button class="tag wip"><i class="fas fa-person-digging"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni forschung web">
+                <a href="dir/webndata/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/f1wd.jpg">
+                        <div class="cardText">
+                            <h3>F1 Radio Analysis</h3>
+                            <i>Sommer 2023</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag forschung"><i class="fas fa-book-open-reader"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="freizeit web wip">
+                <a href="dir/punchclock/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/punchclock.jpg">
+                        <div class="cardText">
+                            <h3>punchclock</h3>
+                            <i>Sommer 2023</i>
+                            <div class="tags">
+                                <button class="tag freizeit"><i class="fas fa-chalkboard-user"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                                <button class="tag wip"><i class="fas fa-person-digging"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni forschung">
+                <a href="dir/BA2/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/MockupBA2.png">
+                        <div class="cardText">
+                            <h3>Weight-Change in VR</h3>
+                            <i>Winter 2023/2024</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag forschung"><i class="fas fa-book-open-reader"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni web">
+                <a href="dir/ASE/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/ASE.jpg">
+                        <div class="cardText">
+                            <h3>Full Stack Device Manager</h3>
+                            <i>Winter 2023/2024</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni web">
+                <a href="dir/PS/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/VR4.jpeg">
+                        <div class="cardText">
+                            <h3>VR4 Roomware</h3>
+                            <i>Sommer 2024</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni web">
+                <a href="dir/FS/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/FS.jpeg">
+                        <div class="cardText">
+                            <h3>Form Matters: Affordances</h3>
+                            <i>Winter 2024/2025</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag forschung"><i class="fas fa-book-open-reader"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card" data-tags="uni forschung web">
+                <a href="dir/MA/index.html">
+                    <div class="cardTop">
+                        <img src="res/img/mirrorlevel.svg">
+                        <div class="cardText">
+                            <h3>mirrorlevel</h3>
+                            <i>Winter 2025/2026</i>
+                            <div class="tags">
+                                <button class="tag uni"><i class="fas fa-building-columns"></i></button>
+                                <button class="tag forschung"><i class="fas fa-book-open-reader"></i></button>
+                                <button class="tag web"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="unit final">
+        <a href="mailto:thilo.hohl@gmail.com" class="card cardlink" id="cl">
+            <div class="cardText uber">Interesse geweckt? Melde dich bei mir!&nbsp;<i class="fa-regular fa-paper-plane highlight"></i></div>
+        </a>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script>
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: DungeonHero | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <h1>Dungeon Hero</h1>
+                    <i>Sommer 2021</i>
+                    <div class="tags">
+                        <button class="tag">Forschung</button>
+                        <button class="tag">Game Development</button>
+                    </div>
+                </div>
+                <img src="../../res/img/Dungeon Hero no text.png">
+            </div>
+            <h3>Hintergrund</h3>
+            <p>Für ein Forschungsseminar sollte die zeitliche Erwartung in Spielen getestet werden. Dazu entwickelten Nils Hellwig, Lukas Goclik, Thomas Hofbauer und ich in <code>Unity</code> einen Jump'n'Run-Sidescroller.</p>
+            <p>Im Spiel steuert man einen Läufer, der zwei Arten von Gegnern ausweichen muss: einem fliegenden Pterodaktylus und einer kriechenden Schlange. Das Erscheinen der Gegner wird durch eine Vignette angekündigt, die kurz vorher erscheint, und je nach Gegner muss entweder durch einen Sprung oder ein Ducken reagiert werden. Die spezifische zeitliche Erwartung kommt dazwischen ins Spiel: die Wartedauer zwischen Vignette und Gegnererscheinen wird für die beiden Typen unterschiedlich festgesetzt, was dazu führen <em>kann</em>, dass die spielende Person unterbewusst eine Erwartung in Verbindung mit der Zeitdauer herstellt. Diese Forschungsfrage ist auch die Grundlage für Lukas' Bachelorarbeit, die tiefer in die Thematik des Seminares einsteigt.</p>
+            <p>Leider wurde unser Projekt im Kurs nicht als Forschungsgegendstand behandelt, sondern die verschiedenen Gruppen testeten letztendlich auf einer Spielbasis, die vom Kursleiter kam. Die Abschlussnote für diesen Kurs wurde trotzdem hauptsächlich durch unser eigenes Spiel bestimmt und war eine 1,0.</p>
+            <p>Ich war hauptsächlich für Assets wie Soundeffekte, Foley sowie die scrollenden Hintergrund- und Bodentexturen und das Menü-Interface verantwortlich, die im Pixel-Art-Stil mit <code>GIMP</code> gestaltet wurden.</p>
+            <h3>Grafiken</h3>
+            <h4>Mockup des Spielflows und aller Gegner</h4>
+            <div class="artimg" style="grid-template-columns: repeat(1, 1fr);">
+                <img src="assets/jumpnrun.png">
+            </div>
+            <h4>Screenshots</h4>
+            <div class="artimg" style="grid-template-columns: repeat(2, 1fr);">
+                <img src="assets/1.png">
+                <img src="assets/2.png">
+                <img src="assets/3.png">
+                <img src="assets/4.png">
+                <img src="assets/5.png">
+                <img src="assets/6.png">
+            </div>
+            <h4>Von mir gestaltete Assets</h4>
+            <div class="sprite-view-frame">
+                <div class="sprite-renderer"></div>
+            </div>
+            <div class="artimg" style="grid-template-columns: repeat(1, 1fr);">
+                <img style="image-rendering: pixelated;" src="assets/coin.png">
+                <div class="scroll"><img style="image-rendering: pixelated; width: 300%;" src="assets/bigbackground.png"></div>
+                <div class="scroll"><img style="image-rendering: pixelated; width: 500%;" src="assets/boden.png"></div>
+                <img style="image-rendering: pixelated;" src="assets/gameUI.png">
+            </div>
+            <h3>Audio</h3>
+            Alle Soundeffekte wurden auf einem AKG C3000 B Großmembran-Mikrofon aufgenommen und Teilweise in <code>Audacity</code> bearbeitet.
+            <div class="artimg" style="grid-template-columns: repeat(3, 1fr);">
+                <div>
+                    <h4>Jump 1</h4><audio controls>
+                        <source src="assets/Jump_1.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h4>Jump 2</h4><audio controls>
+                        <source src="assets/Jump_2.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h4>Jump 3</h4><audio controls>
+                        <source src="assets/Jump_3.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h4>Running</h4><audio controls loop>
+                        <source src="assets/run.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h4>Slide 1</h4><audio controls>
+                        <source src="assets/slide0.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h4>Slide 2</h4><audio controls>
+                        <source src="assets/slide1.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h4>Damage</h4><audio controls>
+                        <source src="assets/oeuf.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h4>Death</h4><audio controls>
+                        <source src="assets/tod.mp3" type="audio/mpeg"></audio>
+                </div>
+                <div>
+                    <h4>Snake</h4><audio controls>
+                        <source src="assets/snek.mp3" type="audio/mpeg"></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

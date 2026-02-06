@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script>
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: Masterarbeit | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <img id="mirrorlevelimg" src="img/mirrorlevelw.svg">
+                    <h4>Iterative Development of visualisations for a floor-projected verpal participation feedback system in the context of group therapy</h4>
+                    <i>Winter 2025/2026</i>
+                    <div class="tags">
+                        <button class="tag uni">Universität</button>
+                        <button class="tag forschung">Forschung</button>
+                        <button class="tag web">Web</button>
+                    </div>
+                </div>
+                <img src="../../res/img/mirrorlevel.svg">
+            </div>
+            <p>Meine Masterarbeit im Fach Medieninformatik beschäftigte sich mit der Entwicklung und Evaluierung verschiedener Visualisierungsformen von Redeanteilen. Diese Visualisierung wurden speziell für die Anforderung von Gruppentherapien entwickelt: Bis zu 12 Teilnehmende treffen sich in einem Sitzkreis, abstrakte Visualisierungen verhindern das Auslösen von Traumata; eine technisch simple und wenig störende Umsetzung ist robuster und einfacher für den Endnutzer.</p>
+            <div class="artimg" style="grid-template-columns: 7fr 3fr;">
+                <p>Die Arbeit entstand in Zusammenarbeit des Lehrstuhls Medieninformatik der Universität Regensburg mit dem Lehrstuhl für klinische Psychologie an der Privaten Fachhochschule Göttingen.
+                <br>Mitarbeitende der PFH waren als Stakeholder im Designprozess beteiligt und später bin ich nach Göttingen gereist, um dort mit einer Psychologin und Studierenden eine meiner zwei Studien durchzuführen.</p>
+                <img style="max-width: 200px" src="img/logos.png">
+
+            </div>
+            <h3>Technische Umsetzung</h3>
+            <p>In einem Python-Backend wird mithilfe eines kommerziell verfügbaren omnidirektionalen Array von vier Mikrofonen wird die Direction of Arrival (DOA) eines Signals (= einer Sprecher:in) als Gradzahl ausgelesen. Das fungiert als simple Basis für die Redeanteilsmessung, nachdem die Methode in einer technischen Vorstudie mit ausreichend hoher Genauigkeit validiert wurde.</p>
+            <p>Ein Flask-Server läuft in einem separaten Thread des Python-Skripts. Hier wird das Front-End gehostet und Requests verarbeitet.</p>
+            <p>Das Front-End ist eine Webapp mit <code>D3.js</code>-Canvas, auf dem die Visualisierungen gezeichnet werden. Diese wird in die Mitte des Sitzkreises mit einem Short-Throw-Projektor auf dem Boden angezeigt. In der Mitte der Projektion wird das Mikrofon positioniert.</p>
+            <img style="background-color: white" src="img/diagramm_projection.png">
+            <p>Zu Beginn einer Session werden die Sitzpositionen der Teilnehmenden im Front-End markiert. Dann wird der Reihe nach (z.B. durch eine Vorstellungsrunde) für jede Person eine Audio-Position erfasst. Dieser Wert wird daraufhin verwendet, um ankommende Signale einer Redner:in zuzuweisen. Sobald eine Person einen Satz beendet hat, werden in einer Liste im Backend die Sprechzeiten aktualisiert, die das Front-End kontinuierlich abfragt und entsprechend die Visualisierung zeichnet.</p>
+            <div class="artimg" style="grid-template-columns: 1fr 1fr;">
+                <img src="img/userAdd.jpg">
+                <img src="img/restingState.jpg">
+            </div>
+            <p class="image-caption">Front-End-Screenshots. Links: Markierung der Sitzposition, Rechts: Beispielhafte Verteilung von 12 Teilnehmenden.</p>
+            <p>Die Verteilung der Teilnehmenden (links) ist flexibel, was Anzahl und exakte Position der Personen angeht.<br>
+                Im Anlegen-Modus wird ein eigens angefertigter großer Cursor sichtbar und eine orange Markierung, die nur am Rand des möglichen Kreises entlang läuft, zeigt die spätere Position der Visualisierungen. Diese sollte idealerweise zwischen den Füßen der Teilnehmenden gesetzt werden.<br>
+                Im Wartezustand (rechts) wird dann per Klick auf eine Personenmarkierung der Mikrofon-Kalibrierungs-Zeitraum gestartet, in welchem Input gemessen und die häufigste Position als Standort der Person im Back-End hinterlegt wird.</p>
+            <img src="img/toolbar_collapsed.jpg">
+            <img src="img/toolbar_full.jpg">
+            <p>Die Toolbar am unteren Rand des Displays ist das ausblendbare Steuer-Interface des Front-Ends. Von links nach rechts sind in der Toolbar (alle Felder ausgeklappt): Kompletter Reset aller Personen, Debug-Zeitsetzung, Toggle für Mikrofonposition (falls verrutscht), Auswahl der Visualisierung, Toggle für den Personen-Markieren-Modus, Toggle für Debug-Text (Tatsächliche Rededauer neben Position), Toggle zum Ausschließen der Moderator:in und Session starten. Hier kamen Icons von Phosphor Icons und das Font Face Inter zum Einsatz.</p>
+            <h3>Visualisierungen</h3>
+            <img src="img/slicesRealL.jpeg">
+            <p class="image-caption"><b>Demonstration der Slices-Visualisierung.</b> Redeanteile werden inmitten eines Sitzkreises auf den Boden projiziert.</p>
+            <p><b>Verschiedene Zustände der Partikel-, Kreis- und Slices-Visualisierungen.</b> Von links nach rechts wird eine deaktivierte Person und die Redeanteile 10%, 100% und 190% dargestellt.</p>
+            <img src="img/particlesStates.png">
+            <p>Die Partikel werden anfangs aus der Mitte heraus verteilt und dann zwischen Personen hin- und herbewegt. Sie bieten eine starke, klare Metapher für die Ressource Redezeit, die eindeutig zählbar und damit leicht verständlich ist.</p>
+            <img src="img/circlesStates.png">
+            <p>Die Kreise wachsen oder schrumpfen im Radius abhängig von der Redezeit einer Person. Der weiß gestrichelte Ring zeigt die ideale Beteiligung (100%) an.</p>
+            <img src="img/slicesStates.png">
+            <p>Die Slices wachsen von der Mitte heraus auf die Nutzer:in zu. Die weiß gestrichelte Linie spiegelt den Idealwert wieder, der für die ganze Gruppe einen zusammenhängenden Kreis darstellen würde und so ein besseres Gemeinschaftsgefühl herbeiführen sollte.
+            </p>
+            <h3>Ergebnisse</h3>
+            <p>Die drei Visualisierungen und eine nicht-visualisierte Bedingung wurden in zwei Studien evaluiert. Eine lose Fokusgruppe mit Informatik-Studierenden brachte Design-Erkenntnisse und eine anwendungsnahe Therapiesimulation, geleitet von einer Psychologin, nach der die leitende Expertin ihre Einschätzung gab.</p>
+            <div class="artimg" style="grid-template-columns: 5fr 7fr">
+                <div>
+                    <p>Balancing Index nach Gini über den Verlauf der moderierten Therapiesimulation. Für jeden Moment jeder Runde wird die Summe der Abweichungen von der Idealverteilung aller Redenden gebildet und dann normalisiert.</p>
+                    <img src="giniformula.svg" style="padding: .5rem 0; width: 75%; filter: invert(100%);">
+                    <p>Je höher der Wert, desto stärker die Divergenz vom Ideal. Ein Gini Index gleich 0 bedeutet, dass jede Person genau 1/n spricht.</p>
+                    <p>Im Graphen ist erkennbar, dass zumindest in diesem sehr kleinen Sample die Runde ohne Visualisierung (Blank) am weitesten von einer Idealverteilung entfernt war, während die drei visualisierten Runden alle etwas ausgeglichener sind.</p>
+                </div>
+                <img src="img/gini.svg">
+            </div>
+            <p>Die Expertin, die nach der Studie interviewt wurde, hat nach eigener Einschätzung stark vom System profitiert, weil es ihr die mentale Last der Redeanteilszählung abnahm und sie sich besser auf die Inhalte der simulierten Therapiesitzung konzentrieren konnte. In ihrem Feedback und auch in der Fokusgruppe schnnitt die Partikel-Visualisierung am besten ab, dicht gefolgt von den Kreisen.</p>
+            <p>Insgesamt deuten die Ergebnisse der Studien auf ein hohes Potenzial eines Group-Mirror-Systems für Gruppentherapien hin, das allerdings noch in längeren, umfangreicheren Studien erforscht werden muss, bevor mirrorlevel oder eine Weiterentwicklung davon real eingesetzt werden kann.</p>
+            <p>Die Arbeit wird aktuell begutachtet und die Endnote an dieser Stelle nachgereicht.</p>
+            <p>In der Zusammenarbeit zwischen den Lehrstühlen der Universität Regensburg und der PFH Göttingen wird weiter an interdisziplinären Anwendungen aus der Informatik für die Psychologie geforscht und dabei auf dieser Arbeit aufgebaut werden. Eine verkürzte Fassung der Masterarbeit wird zukünftig in relevanten Konferenzen eingereicht; damit einhergehend plane ich die Veröffentlichung von mirrorlevel als Open-Source-Tool.</p>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

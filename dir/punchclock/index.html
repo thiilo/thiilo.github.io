@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script> 
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: punchclock | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <h1>punchclock</h1>
+                    <i>Sommer 2023</i>
+                    <div class="tags">
+                        <button class="tag web">Web</button>
+                        <button class="tag freizeit">Freizeit</button>
+                        <button class="tag wip">Work-in-Progress</button>
+                    </div>
+                </div>
+                <img src="../../res/img/punchclock.jpg">
+            </div>
+            <a href="https://github.com/thiilo/punchclock" target="_blank">
+                <Button class='doc' style="background-color: #001524; color: #ffedc1">GitHub-Repository aufrufen ↗</Button>
+            </a>
+            <p>Eine leichtgewichtige Stechuhr-Applikation, die für Projekte, Aufgaben oder Arbeit Zeit misst. An CLI-Ästhetik angelehnt, aber als WebApp mit <code>HTML</code>, <code>CSS</code>, <code>JS</code> und <code>JQuery</code> gebastelt.</p>
+            <div class="artimg" style="grid-template-columns: repeat(3, 1fr);">
+                <img src="img/start.jpg">
+                <img src="img/clockedin.jpg">
+                <img src="img/using.jpg">
+            </div>
+            <p>Projekte werden per buttons oder mit <kbd>CTRL + A</kbd> angelegt und optional mit einer Zieldauer versehen. Dann kann man per Leertaste einchecken und während der Aufgabe das Tool im Hintergrund oder klein als Zeitreferenz laufen lassen.</p>
+            <p>Das Tool ist bislang nicht besonders funktionsreich und speichert in localStorage. Ein Log-Export und Statistiken (Zeit pro Wochentag usw.) wären sinnvolle Erweiterungen.</p>
+            <h3>Live-Demo</h3>
+            <object class="webview" width="100%" zoom="80%" style="aspect-ratio: 5/6" data="tool/index.html"></object>
+
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

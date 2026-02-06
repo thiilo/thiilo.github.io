@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gesRun</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="intro">
+        <h1>gesRun<small>a framework for referent-based gesture elicitation studies</small></h1>
+        <input class="inputs" id="VPNR" type="number" placeholder="VP-ID">
+        <input class="inputs" id="refDur" type="number" placeholder="Referenten-Dauer (Default 2s)">
+        <input class="inputs" id="refLoops" type="number" placeholder="Referenten-Wiederholungen (Default 2)">
+    </div>
+    <div class="phase likertphase" style="display: none; text-align: center; margin: 2em auto">
+        <h3>Sprechen Sie bitte nacheinander laut die passende Zahl für die beiden Fragen aus.</h3>
+        <br>
+        <p>Die eben demonstrierte Geste <i>beschreibt den Vorgang gut.</i></p>
+        <div class="likertitems">
+            <label style="text-align: right;">stimme gar nicht zu</label>
+            <input type="radio" id="likert0" name="fitting" disabled>
+            <input type="radio" id="likert1" name="fitting" disabled>
+            <input type="radio" id="likert2" name="fitting" disabled>
+            <input type="radio" id="likert4" name="fitting" disabled>
+            <input type="radio" id="likert3" name="fitting" disabled>
+            <input type="radio" id="likert5" name="fitting" disabled>
+            <input type="radio" id="likert6" name="fitting" disabled>
+            <label style="text-align: left;">stimme voll zu</label>
+            <div></div>
+            <label>-3</label>
+            <label>-2</label>
+            <label>-1</label>
+            <label>0</label>
+            <label>1</label>
+            <label>2</label>
+            <label>3</label>
+            <div></div>
+        </div>
+        <br>
+        <br>
+        <p>Die eben demonstrierte Geste ist <i>leicht auszuführen</i>.</p>
+        <div class="likertitems">
+            <label style="text-align: right;">stimme gar nicht zu</label>
+            <input type="radio" id="likert0" name="easeofuse" disabled>
+            <input type="radio" id="likert1" name="easeofuse" disabled>
+            <input type="radio" id="likert2" name="easeofuse" disabled>
+            <input type="radio" id="likert4" name="easeofuse" disabled>
+            <input type="radio" id="likert3" name="easeofuse" disabled>
+            <input type="radio" id="likert5" name="easeofuse" disabled>
+            <input type="radio" id="likert6" name="easeofuse" disabled>
+            <label style="text-align: left;">stimme voll zu</label>
+            <div></div>
+            <label>-3</label>
+            <label>-2</label>
+            <label>-1</label>
+            <label>0</label>
+            <label>1</label>
+            <label>2</label>
+            <label>3</label>
+            <div></div>
+        </div>
+        <br>
+        <button onclick="$('.likertphase').hide(); finishDemo();"><img src="fpedal.png" style="width: 200px"><br>Nächster Referent →</button>
+    </div>
+    <div class="phase productionphase" style="display: none">
+        <h2>Probierphase</h2>
+        <h3>Probieren Sie nun mehrere Gesten aus, die die soeben gezeigte Abfolge auslösen könnten.<br><br>Wenn Sie eine Geste gefunden haben, mit der Sie zufrieden sind, schalten Sie mit dem Fußpedal weiter und demonstrieren sie diese.</h3>
+        <button class="red" onclick="$('.productionphase').hide(); $('.demophase').show(); startRecording();">
+            <img src="fpedal.png" style="width: 200px"><br>
+            • Aufnahme starten</button>
+    </div>
+    <div class="phase demophase" style="display: none">
+        <h2>Demonstrierphase</h2>
+        <h3><span class="circle red size-animated"></span>Demonstrieren Sie jetzt ihre Lieblingsgeste.</h3>
+        <button class="red" onclick="$('.demophase').hide(); stopRecording(); $('.likertphase').show();">
+            <img src="fpedal.png" style="width: 200px"><br>Aufnahme beenden</button>
+        </button>
+    </div>
+        <div class="phase rateDevice" style="display: none">
+        <h3><span class="circle red size-animated"></span>Gerät bewerten</h3>
+        <p>Bitte beschreiben Sie Ihre Erfahrung mit dem soeben benutzten Gerät.</p>
+        <button onclick="stopAudioRecording(); $('.rateDevice').hide(); changeDevice();"><img src="fpedal.png" style="width: 200px"><br>Weiter</button>
+        </button>
+    </div>
+    <div class="phase changeDevice" style="display: none">
+        <h3>Gerätetausch</h3>
+        <p>Bitte Gerät <b id="deviceName">null</b> bereitstellen!</p>
+        <button onclick="startReferents();"><img src="fpedal.png" style="width: 200px"><br>Gerät ist bereit</button>
+        </button>
+    </div>
+    <div class="phase fertig" style="display: none">
+        <h1>Studie abgeschlossen!</h1>
+        <h3>Vielen Dank für die Teilnahme.</h3>
+        <button onclick="window.location.reload();"><img src="fpedal.png" style="width: 200px"><br>Zurück zum Start</button>
+        </button>
+    </div>
+    <div class="videobox" style="display: none;">
+    </div>
+    <div class="buttondiv intro">
+        <button class="yellow" onclick="$('.videobox').toggle();  console.log('streams: '); console.log(streams);">▶ show video</button>
+        <!-- <button class="red" id="recordButton" onclick="startRecording();">⚬ start recording</button> -->
+        <button onclick="startStudy();">start study →</button>
+    </div>
+    <h1 id="countdown" style="display:none;">countdown</h1>
+    <div class="referentdiv" style="display: none;">
+        <img id="referent">
+        <div id="progressOutline">
+            <div id="progressBarContainer">
+                <div id="progressBar">
+                </div>
+                <div id="progressBarDivider">
+                </div>
+            </div>
+        </div>
+        <button onclick="startStudy();" style="display: none;">restart</button>
+        <br>
+        <button class="skipButton" onclick="skipRefs();" style="display: none;">Wiederholungen überspringen →</button>
+    </div>
+</body>
+
+</html>

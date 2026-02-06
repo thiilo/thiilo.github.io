@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script>
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: Device Manager | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <h1>Full Stack Device Manager</h1>
+                    <i>Winter 2023/2024</i>
+                    <div class="tags">
+                        <button class="tag uni">Uni</button>
+                        <button class="tag web">Web</button>
+                    </div>
+                </div>
+                <img src="../../res/img/ASE.jpg">
+            </div>
+            <p>Im Rahmen des Masterkurses <i>Advanced Software Engineering</i> entwickelte Full-Stack-Anwendung zum Verwalten von Geräten und Ausleihen von Geräten.</p>
+            <p>Als Back-End wurde eine <code>SQLite</code>-Datenbank mit <code>SQLAlchemy</code> über <code>FastAPI</code> innerhalb eines <code>Docker</code>-Containers verwendet, welches das Front-End (<code>HTML/CSS</code>) über <code>axios</code> befüllt.</p>
+            <p>Der simple Seitenaufbau orientiert sich am <a class="textlink" href="https://wiki.mi.ur.de/start">Wiki des Lehrstuhls</a>. Manrope und Phosphor Icons verfeinern neben eigenem CSS die Darstellung.</p>
+            <p>Zur Entwicklung wurde mit User Stories und Anforderungslisten Requirements Management geplant und über GitLab strukturiert.</p>
+            <h3>Interface</h3>
+            <p>Drei verschiedene Nutzergruppen Administration, Verwaltung und Studierende haben verschiedene Berechtigungen und das User Interface wird der Rolle dynamisch angepasst.</p>
+            <img src="docs/list_user.jpg">
+            <p class="image-caption">Studis können nur ihre Ausleihen und die Geräteliste einsehen.</p>
+            <img src="docs/list_verwaltung.jpg">
+            <p class="image-caption">Verwaltungspersonen können die Reservierungen verwalten und Geräte bearbeiten.</p>
+            <img src="docs/list_admin.jpg">
+            <p class="image-caption">Administrator:innen können das und zusätzlich Import, Export, und die Nutzerverwaltung einsehen.</p>
+            <p>Geräte können in der Liste per Freitextsuche und nach Status gefiltert gefunden werden. Für jedes Gerät wird nach dem Import (per CSV) oder manuellem Eintippen eine Einzelansicht mit weiteren Informationen und Möglichkeit zur Ausleihe angelegt.</p>
+            <img src="docs/einzelansicht_stud.jpg">
+            <h3>Ausleihverwaltung</h3>
+            <p>Ausleihen werden über die Tabelle <code>Booking</code> zwischen <code>User</code> und <code>Device</code> angelegt. So ist auch eine Historie pro User einsehbar.</p>
+            <img src="docs/meins.jpg">
+            <p class="image-caption">Für Studierende werden Ausleihen erst genehmigt und dann nach Status mit Kontextinformationen gelistet</p>
+            <img src="docs/ausleihen_admin.jpg">
+            <p class="image-caption">Administrator:innen oder Verwaltungskräfte können Ausleihen akzeptieren und wieder annehmen. Kommunikation zur Übergabe oder Rückgabe wird per Mail gelöst, ist aber zumindest für die Verwaltung mit einem einfachen Klick erreichbar.</p>
+            <p>Die Arbeit wurde mit 1,3 bewertet.</p>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

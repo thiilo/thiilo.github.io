@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script>
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: Bachelorarbeit | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <h1>Do Weight-Changing Controllers representing Stamina improve Game Experience in Virtual Reality?</h1>
+                    <i>Winter 2023/2024</i>
+                    <div class="tags">
+                        <button class="tag uni">Universität</button>
+                        <button class="tag forschung">Forschung</button>
+                        <button class="tag web">Code</button>
+                    </div>
+                </div>
+                <img src="../../res/img/MockupBA2.png">
+            </div>
+            <p>Meine Bachelorarbeit im Fach Medieninformatik war die Entwicklung eines VR-Games, das mithilfe von gewichtsverändernden Controllern die Spielerfahrung verbessern sollte, indem mit höherer Erschöpfung auch die Controller schwerer wurden.
+            Umgesetzt wurde es in <code>Unity</code> und mit PumpVR, einem Prototypen, den Kalus et al. <a href="https://dl.acm.org/doi/pdf/10.1145/3544548.3581172">[1]</a> an der Universität Regensburg entwickelt hatten.</p>
+            <img src="img/map_perspective.jpg">
+            <div class="artimg" style="grid-template-columns: 1fr 3fr">
+                <p><b>Validation der Controller.</b><br>
+                    PumpVR war bislang nur immer voll befüllt worden — in meiner Studie sollte wiederholbar mit kleinen Schritten gearbeitet werden, um insgesamt zehn verschiedene Gewichtslevel repräsentieren zu können.
+                    Mit einem Arduino-Skript wurden die Controller auf einer Waage schrittweise befüllt, um konsistente und passende Füllstände abzusichern.</p>
+                <video src="img/validation.mov" loop controls>
+            </div>
+            <div class="artimg" style="grid-template-columns: 31fr 40fr;">
+                <img src="img/map_iso.jpg">
+                <img src="img/Wallswhite.png">
+            </div>
+            <p>Mit <code>Unity</code> erstellte ich dann ein Kletterspiel, in dem Erschöpfung generiert werden sollte. Ein bergiges Umfeld mit fixen Kletterpunkten wurde entworfen, in dem in gesetzter Zeit so viel Höhe wie möglich erreicht werden sollte.</p>
+            <div class="artimg" style="grid-template-columns: 2fr 3fr">
+                <video src="img/hands.mp4" loop controls></video>
+                <div>
+                    <p><b>Controller und Repräsentation.</b><br>Die Hände der spielenden Person werden durch HTC Vive Tracker in der virtuellen Welt positioniert, was mit dem <code>OpenXR</code>-Package relativ knifflig umzusetzen war.<br>Die grüne Anzeige neben den Händen ist das Exhaustion Meter, welches in der Anwendung den Füllstand der Wasserreservoirs spiegelt. Je höher die Spieler:in ohne Pause klettert, desto erschöpfter wird sie. Pro Erschöpfungslevel werden ~50g Wasser auf der Hand hinzugefügt, bis zum Maximum von 500g pro Hand.</p>
+                    <div class="artimg fixed" style="grid-template-columns: repeat(3, 1fr)">
+                        <img src="img/hand_default.jpg">
+                        <img src="img/hand_active.jpg">
+                        <img src="img/hand_support.jpg">
+                    </div>
+                    <p>
+                        Da der User keinen Greifknopf hatte, wurde durch die Nähe zum Griff das Festhalten getriggert. Um den Status zu repräsentieren, färben sich die Hände um (und werden als zugegriffen dargestellt, hier zu Visualisierungszwecken nicht): Grün ist die aktiv führende Hand, die zweite Hand an der Wand wird blau markiert.
+                    </p>
+                </div>
+            </div>
+
+            <p>In einer Studie mit 24 Teilnehmenden wurde eine nicht-gewichtete Version des Spiels mit aktiver Gewichtsveränderung verglichen und in der Kondition mit gewichteten Controllern verbesserte Spielfreide (PXI Enjoyment) und höherer Realismus (IPQ Experienced Realism) festgestellt. Die subjektive Anstrengung der Teilnehmenden war mit Gewichten höher als ohne.</p>
+            <p>Die Bachelorarbeit wurde mit 1,3 benotet.</p>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

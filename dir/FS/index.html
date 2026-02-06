@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script>
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: Form Matters | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <h1>Form Matters: Affordances</h1>
+                    <i>Winter 2024/2025</i>
+                    <div class="tags">
+                        <button class="tag uni">Universität</button>
+                        <button class="tag forschung">Forschung</button>
+                        <button class="tag web">Web</button>
+                    </div>
+                </div>
+                <img src="../../res/img/FS.jpeg">
+            </div>
+            <p>Im Forschungsseminar des Masterstudiengangs Medieninformatik habe ich zusammen mit <a href="https://hci.ur.de/people/leonie_schrod">Leonie Schrod</a> erforscht, welche Affordanzen für neuartige Formen von Eingabegeräten existieren.</p>
+            <div class="artimg" style="grid-template-columns: 16fr 9fr;">
+                <img src="img/call2.png">
+                <img src="img/devicesall.png">
+            </div>
+            <p class="image-caption">Exploration möglicher Formen (Banana for Scale), gerendert mit Blender.</p>
+            <p>Dafür habe ich mehrere neuartige Touchpad-Formen in Blender modelliert und 3D-gedruckt. Um alle Oberflächen so angenehm wie möglich zu halten, wurden diese anschließend mehrfach lackiert und geschliffen.</p>
+            <img src="img/deviceteaser.png">
+            <p class="image-caption">Finale "Geräte": Quadrat, Kreis, Vertikal, Horizontal, Konvex und Konkav.</p>
+            <p>Referenten, also Piktogramme, die Ziel-Handlungen so abstrakt wie möglich kommunizieren sollen, wurden mit Adobe Photoshop entworfen. Wichtig für Objekttransformationen wie "Bewegen" oder "Rotieren" war die Orientierbarkeit, weswegen eine Diamantform mit zwei farblich markierten Seiten gewählt wurde.</p>
+            <img src="img/referents-hor.png">
+            <p class="image-caption">Referenten: von oben nach unten sind jeweils die gewünschten Veränderungen,<br>von links nach rechts: Bewegen, Rotieren, Vergrößern, Selektieren, Anschalten, Duplizieren.</p>
+
+            <h3>gesRun</h3>
+            <p>Zum wiederholbaren, geordneten Darstellen der Referenten und Aufnehmen der Gesten habe ich eine Webapp gebaut. gesRun nimmt mehrere Bildsequenzen und spielt diese nach dem Muster des Studiendesigns ab. Umgesetzt ist die Webapp mit <code>HTML</code>, <code>CSS</code> und <code>JavaScript</code> (mit <code>JQuery</code> für einfacheres DOM-Handling).</p>
+            <p>Es erwartet den Input eines Fußpedals, das auf die Leertaste gemappt ist, und nimmt mit der <code>MediaRecorder-API</code> mehrere Webcams und einen Audiostream gleichzeitig auf, um die von den Proband:innen gezeichneten Gesten und deren Bewertungen aus verschiedenen Winkeln aufzunehmen.</p>
+            <object class="webview" width="100%" zoom="80%" style="aspect-ratio: 8/5" data="Tool/index.htm"></object>
+            <p>In der tatsächlichen Studie wurden zwei Webcams verwendet, die eine Draufsicht und eine 3/4-Ansicht aufnahmen.</p>
+            <div class="artimg" style="grid-template-columns: 30fr 19fr">
+                <img src="img/setup2.svg">
+                <img src="img/setup.png">
+            </div>
+            <h3>Ergebnisse</h3>
+            <p>24 Teilnehmende produzierten insgesamt 864 Gesten, die dann codiert und eingeordnet wurden.</p>
+            <div class="artimg" style="grid-template-columns: repeat(2, 1fr);">
+                <img src="img/max_matrix.svg">
+                <img src="img/overlap_matrix.svg">
+            </div>
+            <p class="image-caption">Links: Häufigste Geste pro Gerät und Referent, Rechts: Überlappung zwischen Gestenset der Geräte</p>
+            <p>Konkav und Konvex wurden sehr ähnlich benutzt und wären laut Proband:innen für die Bedienung von 3D-Software gut geeignet. Der Kreis war im Vergleich zum Quadrat, das sehr nah an bekannten Touchpads lag, am einfachsten benutzbar.
+            In der linken Grafik ist erkennbar, dass sich beim Referent "zoom" am stärksten an die Geräteform angepasst wurde.
+            </p>
+            <div class="artimg" style="grid-template-columns: 4fr 6fr;">
+                <p>
+                    Insgesamt waren die Ergebnisse der Studie nicht sonderlich überraschend, die Arbeit aber trotzdem durch ihre Sorgfältigkeit aussagekräftig.
+                    <br>Die Entwicklung und der Studienaufbau waren unterhaltende und auch lehrreiche Aufgaben.
+                    <br>Rechts sind noch die am häufigsten verwendeten Hand- und Fingerkombinationen in den Gesten dargestellt, eine Grafik, die ich in Photoshop zusammengebastelt habe.
+                </p>
+                <img src="img/handsbigger.png">
+            </div>
+            <p>Die Arbeit wurde mit 1,0 bewertet.</p>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

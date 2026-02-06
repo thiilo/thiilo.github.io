@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script>
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: F1 Radio Analysis | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <h1>F1 Radio-Analyse</h1>
+                    <i>Sommmer 2023</i>
+                    <div class="tags">
+                        <button class="tag web">Web</button>
+                        <button class="tag forschung">Forschung</button>
+                        <button class="tag uni">Universität</button>
+                    </div>
+                </div>
+                <img src="../../res/img/f1wd.jpg">
+            </div>
+            <a href="F1MD.html" target="_blank">
+                <Button class='doc' style="background-color: var(--background);"><i class="fa-solid fa-chart-line"></i> Datenanalyse ↗</Button>
+            </a>
+            <h3>Hintergrund</h3>
+            <p>In einem Masterkurs zur Datenauswertung mit <code>R</code> war die Abschlussaufgabe das Explorieren eines selbst gecrawlten Datensatzes.</p>
+            <p>Ich entschied mich, Radiotranskripte aus allen Formel-1-Rennen von 2013 bis 2017 von <a href="https://www.racefans.net/">racefans.net</a> mit <code>RSelenium</code> zu holen und diese nach Fahrern und Teams sortiert zu analysieren.</p>
+            <p>Dabei stützte ich mich auf simple Verteilungsdiagramme, Word Clouds und einfache Sentimentanalyse.</p>
+            <h3>Auszüge</h3>
+            <div class="artimg" style="grid-template-columns: 4fr 1fr">
+                <img src="nobypos.png">
+                <p>Nicht alle Radionachrichten werden übertragen, und aus den Daten ist erkennbar, dass häufiger die Kommuniktaion erfolgreicher Teams abgespielt werden.</p>
+            </div>
+            <div class="artimg" style="grid-template-columns: 1fr 4fr">
+                <p style="text-align: right;">Dieser Graph sieht hauptsächlich einfach nur schön aus; abgebildet ist das durschnittliche Sentiment pro Runde für jeden Grand Prix auf dem Kalender.</p>
+                <img src="avgsent.png">
+            </div>
+            <div class="artimg" style="grid-template-columns: 4fr 1fr">
+                <img src="sentpos.png">
+                <p>Die Korrelation zwischen Platzierung in der Weltmeisterschaft und Stimmung der Nachrichten fiel kleiner aus als erwartet. Das Williams-Team ist so glücklich auf Platz 17 und 18 wie Mercedes an der Spitze der Liste, und bei Ferrari war die Stimmung meist schlecht.</p>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

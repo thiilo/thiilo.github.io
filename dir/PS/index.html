@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Thilo Hohl">
+    <script src="https://kit.fontawesome.com/813d02beb8.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../res/project.js"></script> 
+    <link rel="icon" href="../../favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Projekt: VR4Ware | Thilo Hohl</title>
+</head>
+
+<body>
+    <div class="article">
+        <div>
+            <a href="../../thilbo.html#projectsSection"><i class="gohome ph-bold ph-arrow-bend-up-left"></i></a>
+        </div>
+        <div class="card">
+            <div class="articlehead">
+                <div class="textverticalcenter">
+                    <h1>VR4 Roomware</h1>
+                    <i>Sommer 2024</i>
+                    <div class="tags">
+                        <button class="tag web">Code</button>
+                        <button class="tag uni">Universität</button>
+                    </div>
+                </div>
+                <img src="../../res/img/VR4.jpeg">
+            </div>
+            <p>Im Projektseminar haben Leonie Schrod, Tien Ho und ich gemeinsam das Labor des Lehrstuhl mit etwas smarter gemacht.</p>
+            <p>Nach einer Bestandsaufnahme und Anforderungserhebung wurden im SCRUM-Format verschiedene Verbesserungen der Struktur des Labors vorgenommen.</p>
+            <p>IoBroker, eine IoT/Automatisierungsplattform auf Basis von <code>Node.js</code>, war bereits auf einem Netzwerkrechner installiert und konnte aktualisiert und dann als zentrale Verwaltung weiterverwendet werden.</p><p>Mit diesen wurden ein Sensorkit, zentralisierte Steuerung von Projektoren und einer HDMI-Schaltmatrix über MQTT sowie eine intelligente Signalleuchte, die sowohl als Warnlicht im Labor als auch online vor einer aktuelle Studiendurchführung warnt, durch die der Raum exklusiv genutzt wird.</p>
+            <h3>Türdisplay</h3>
+            <p>Die im Labor geplanten Studien sind in einem Online-Kalender verfügbar, aber vor Ort nicht einsehbar. Eine unserer Ideen war also ein stromsparendes Türdisplay, das die kommenden Belegungen darstellt und diese regelmäßig aktualisiert.</p>
+            <p>Als Türdisplay wurde ein Inkplate 6, ein effizientes, monochromes E-Ink-Display, das einen ESP32 an Bord hat. Auf diesem wird alle paar Stunden ein Bild von einer Adresse im lokalen Server geholt, das aus dem Kalender mithilfe von einem JS-Skript auf einem Canvas generiert wird. Das Display ist steckt in einem 3D-gedruckten Gehäuse direkt an der Glastür und kann alle paar Monate zum Laden herausgenommen werden.</p>
+            <div class="artimg" style="grid-template-columns: 10fr 10fr 11fr">
+                <img src="img/StudienLampeNah.JPG">
+                <img src="img/TürdisplayMittel.JPG">
+                <img src="img/rp-notr.png">
+            </div>
+            <h3>Digitaler Zwilling und Sensorkit</h3>
+            <p>Für ein Dashboard haben wir einen digitalen Zwilling der Räume angelegt, der vom Bauplan vereinfacht abgezeichnet wurde. Neben der Studienlampe und der HDMI-Matrix wurden von mir hier die Werte des Sensorkits visualisiert.</p>
+            <p>In jedem der drei Räume des Labors war bereits eine Watterott-CO2-Ampel installiert, die den aktuellen Temperatur-, Licht und CO<sub>2</sub>-Wert liest. Wir haben diesen Output ans Dashboard angebunden und erweitert, indem ein Gehäuse mit weiterer Hardware um die Ampel angebracht wurde.</p>
+            <div class="artimg" style="grid-template-columns: 13.2fr 10fr 10fr">
+                <img src="img/model.jpg">
+                <img src="img/SKInnen.jpg">
+                <img src="img/SensorkitKlingel.JPG">
+            </div>
+            <p>Dazu habe ich der Einfachheit halber mit <code>SketchUp</code> ein Gehäuse modelliert und auf dem laboreigenen Creality Ender 3 (in einigen Iterationen) aus PETG gedruckt, in welches ein Wemos D1 mini zusammen mit einem PIR-Sensor, einem Buzzer und einem LED-Streifen montiert wird.</p>
+            <p>Das Ganze wurde verlötet und in das Gehäuse gepfriemelt, was nun auch ermöglicht, anhand vom Bewegungssensor Raumnutzung zu erfassen (Wann ist jemand in welchem Raum) und zusammen mit einer MQTT-verbundenen Klingel ein auditives und visuelles Signal in allen Räumen zu senden. Versuchsteilnehmende kommen ohne Schlüssel nicht ins Gebäude und kommunizieren oft nur über die Universitätsmail mit der Versuchsleitung, was vor Allem im Winter unangenehmes Warten verursachen kann. Durch die Verknüpfung mit IoBroker ist diese Klingel auch intelligent und wird beispielsweise, wenn die Studienlampe aktiv ist, nur visuell angezeigt, um weniger zu stören, aber noch immer sichtbar zu sein.</p>
+            <p>Das Projekt wurde mit 1,0 bewertet.</p>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>
