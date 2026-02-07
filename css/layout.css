@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: ThiloType;
+    src: url('./res/fonts/ThiloType-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *,
 *:before,
 *:after {
@@ -1121,7 +1128,7 @@ p {
     }
     
     .fontgrid {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .artimg:not(.fixed) {
