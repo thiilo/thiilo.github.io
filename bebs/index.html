@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jubiläum</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style type="text/css">
+    @font-face {
+        font-family: ThiloType;
+        src: url(ThiloType-Regular.otf);
+    }
+
+    html {
+        font-family: ThiloType;
+    }
+
+    html {
+        height: 100%;
+        width: 100%;
+        font-size: 150%;
+        background-image: url(background.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    body {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .center {
+        text-align: center;
+        transform: rotate(-6deg);
+        padding: 0 .5em;
+    }
+
+    .center img {
+        width: 33vw;
+    }
+
+    #randim {
+        color: crimson;
+        animation: .7s ease 0s infinite alternate scaleup;
+    }
+
+    #randim a {
+        color: crimson;
+    }
+
+    #nod {
+        margin-block-end: 0;
+    }
+
+    #footer {
+        position: absolute;
+        bottom: 5px;
+        font-family: sans-serif;
+        font-size: 60%;
+    }
+
+    @keyframes scaleup {
+        from {
+            transform: rotate(8deg) translate(0, 10%) scale(0.8);
+        }
+
+        to {
+            transform: rotate(8deg) translate(0, 10%) scale(1.1);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <img src="icons.png" alt="🐸❤️🐥">
+        <h1 id="nod">XXX Tage Frosch und Biberl</h1>
+        <h3 style="margin-block-start: 0;">für immer und mehr!</h3>
+        <p id="randim">Kein Internet? Bitte neu laden! <3</p> </div> <p id="footer">von thilo für lea, 2023.</p>
+        <script type="text/javascript">
+        var now = new Date();
+        const start = new Date('2023-01-08');
+        const diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+        const months = Math.floor(diff / 30);
+        var notes = [
+            "Ich lieb dich!",
+            "Ich schlieb dich!",
+            "Ich thieb dich!",
+            "Ich liebe dich!",
+            "Ich liebe dich für immer!",
+            "Ich lieb dich immer noch!",
+            "I love you!",
+            "Heute schon geklickert?",
+            "Süßmaus!",
+            "Mein Bebi!",
+            "Wer das liest ist süß!",
+            "Für immer dein <3",
+            "Von hier bis zum Mond und wieder zurück",
+            "Lieblingsmensch",
+            "Beste Freundin aller Zeiten!",
+            "Meine Süßmaus!",
+            "Süßer Schatz!",
+            "Hallo Zwergerl!",
+            "Willkommen zurück, Bebi!",
+            "Hi Babes!",
+            "Schreib mir mal <3",
+            "Snap mir mal <3",
+            "Schick mir eine Mail <3",
+            "Du bist mein Ein und Alles!",
+            "Du bist mir das Wichtigste!",
+            "Mein kleiner größter Schatz!",
+            "Servatius!",
+            "Lieblingsbebi!!",
+            "❤️❤️❤️",
+            "❤️❤️",
+            "❤️",
+            "🐸❤️🐥",
+            "🐸❤️🐥",
+            "🐸❤️🐥",
+            "<a href='test.de'>Klick' mal hier!</a>",
+            "<a href='https://www.instagram.com/p/Cz2jtNhRRIC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='>for you</a>",
+            "<a href='https://open.spotify.com/playlist/07nLPhLVqanqKvg2ihv9ZC?si=aa219928bcff4afa'>Etwas Musik gefällig?</a>",
+        ];
+
+        document.getElementById("nod").innerHTML = diff + " Tage Frosch und Biberl";
+
+        if (now.getHours() == now.getMinutes()) {
+            document.getElementById("randim").innerHTML = now.getHours() + ":" + now.getMinutes() + "!! ❤️❤️❤️";
+        } else if (now.getDate() == 8) {
+            // Jahrestag!
+            if(months%12 == 0) {
+                document.getElementById("nod").innerHTML = months/12 + " Jahre Frosch und Biberl";
+            } else {
+                document.getElementById("nod").innerHTML = months+" Monate Frosch und Biberl";
+            }
+            var rand = getRandomIntInclusive(0, notes.length - 1);
+            document.getElementById("randim").innerHTML = notes[rand];
+        } else if (now.getDate() == 14 && now.getMonth() == 1) {
+            // Valentinstag!
+            document.getElementById("randim").innerHTML = "Frohen Valentinstag! 💘💘💘";
+        } else if (now.getDate() == 24 && now.getMonth() == 11) {
+            // Weihnachten!
+            document.getElementById("randim").innerHTML = "Frohe Weihnachten! 🎄❤️🎄";
+        } else if (now.getDate() == 28 && now.getMonth() == 3) {
+            // Geburtstag!
+            document.getElementById("randim").innerHTML = "Alles Gute zum Geburtstag! 🎉❤️🎉";
+        } else {
+            var rand = getRandomIntInclusive(0, notes.length - 1);
+            document.getElementById("randim").innerHTML = notes[rand];
+        }
+
+        console.log(now.getDate());
+        console.log(now.getMonth());
+        console.log("test");
+
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values_inclusive
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        </script>
+</body>
+
+</html>
