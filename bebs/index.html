@@ -82,12 +82,33 @@
         <img src="icons.png" alt="🐸❤️🐥">
         <h1 id="nod">XXX Tage Frosch und Biberl</h1>
         <h3 style="margin-block-start: 0;">für immer und mehr!</h3>
-        <p id="randim">Kein Internet? Bitte neu laden! <3</p> </div> <p id="footer">von thilo für lea, 2023.</p>
-        <script type="text/javascript">
+        <p id="randim">Kein Internet? Bitte neu laden!</p>
+    </div>
+    <p id="footer">von thilo für lea, 2023.</p>
+    <script type="text/javascript">
+        var clickState = 0;
+        var clickTime = null;
+        var tooFast = false;
         var now = new Date();
+        var bigtext = document.getElementById("nod");
+        var smalltext = document.getElementById("randim");
         const start = new Date('2023-01-08');
         const diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
-        const months = Math.floor(diff / 30);
+
+        // Exact years, remaining months, remaining days from start
+        var fullYears = now.getFullYear() - start.getFullYear();
+        var fullMonths = now.getMonth() - start.getMonth();
+        var remainDays = now.getDate() - start.getDate();
+        if (remainDays < 0) {
+            fullMonths--;
+            var prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            remainDays += prevMonth.getDate();
+        }
+        if (fullMonths < 0) {
+            fullYears--;
+            fullMonths += 12;
+        }
+        const totalMonths = fullYears * 12 + fullMonths;
         var notes = [
             "Ich lieb dich!",
             "Ich schlieb dich!",
@@ -121,23 +142,54 @@
             "❤️❤️",
             "❤️",
             "🐸❤️🐥",
-            "🐸❤️🐥",
-            "🐸❤️🐥",
             "<a href='test.de'>Klick' mal hier!</a>",
             "<a href='https://www.instagram.com/p/Cz2jtNhRRIC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='>for you</a>",
             "<a href='https://open.spotify.com/playlist/07nLPhLVqanqKvg2ihv9ZC?si=aa219928bcff4afa'>Etwas Musik gefällig?</a>",
         ];
 
-        document.getElementById("nod").innerHTML = diff + " Tage Frosch und Biberl";
+        var speedNotes = [
+            "Schnellmaus!",
+            "Viel zu schnell geklickt!",
+            "Jetzt muss ich erst mal rasten"
+        ];
 
+        bigtext.innerHTML = diff + " Tage Frosch und Biberl";
+
+        bigtext.onclick = function() {
+            if(!tooFast) {
+                clickTime = new Date();
+                clickState++;
+                if (clickState == 1) {
+                    bigtext.innerHTML = totalMonths + " Monate und " + remainDays + " Tage Frosch und Biberl";
+                } else if (clickState == 2) {
+                    bigtext.innerHTML = fullYears + " Jahre und " + fullMonths + " Monate Frosch und Biberl";
+                } else {
+                    clickState = 0;
+                    var elapsed = new Date().getTime() - clickTime.getTime();
+                    if (elapsed < 1000) {
+                        tooFast = true;
+                        bigtext.innerHTML = speedNotes[getRandomIntInclusive(0, speedNotes.length - 1)];
+                        setTimeout(function() {
+                            tooFast = false;
+                            bigtext.innerHTML = diff + " Tage Frosch und Biberl";
+                        }, 2000);
+                    } else {
+                        bigtext.innerHTML = diff + " Tage Frosch und Biberl";
+                    }
+                }
+            }
+        };
+
+        // Event–Zeiten
+        // Schnapszahl
         if (now.getHours() == now.getMinutes()) {
             document.getElementById("randim").innerHTML = now.getHours() + ":" + now.getMinutes() + "!! ❤️❤️❤️";
         } else if (now.getDate() == 8) {
             // Jahrestag!
-            if(months%12 == 0) {
-                document.getElementById("nod").innerHTML = months/12 + " Jahre Frosch und Biberl";
+            if(totalMonths%12 == 0) {
+                document.getElementById("nod").innerHTML = totalMonths/12 + " Jahre Frosch und Biberl";
             } else {
-                document.getElementById("nod").innerHTML = months+" Monate Frosch und Biberl";
+                document.getElementById("nod").innerHTML = totalMonths+" Monate Frosch und Biberl";
             }
             var rand = getRandomIntInclusive(0, notes.length - 1);
             document.getElementById("randim").innerHTML = notes[rand];
@@ -151,14 +203,8 @@
             // Geburtstag!
             document.getElementById("randim").innerHTML = "Alles Gute zum Geburtstag! 🎉❤️🎉";
         } else {
-            var rand = getRandomIntInclusive(0, notes.length - 1);
-            document.getElementById("randim").innerHTML = notes[rand];
+            document.getElementById("randim").innerHTML = notes[getRandomIntInclusive(0, notes.length - 1)];
         }
-
-        console.log(now.getDate());
-        console.log(now.getMonth());
-        console.log("test");
-
 
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values_inclusive
         function getRandomIntInclusive(min, max) {
@@ -166,7 +212,7 @@
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
-        </script>
+    </script>
 </body>
 
 </html>
