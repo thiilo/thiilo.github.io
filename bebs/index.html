@@ -56,6 +56,12 @@
 
     #nod {
         margin-block-end: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; 
     }
 
     #footer {
@@ -142,22 +148,28 @@
             "❤️❤️",
             "❤️",
             "🐸❤️🐥",
-            "<a href='test.de'>Klick' mal hier!</a>",
             "<a href='https://www.instagram.com/p/Cz2jtNhRRIC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='>for you</a>",
             "<a href='https://open.spotify.com/playlist/07nLPhLVqanqKvg2ihv9ZC?si=aa219928bcff4afa'>Etwas Musik gefällig?</a>",
         ];
 
         var speedNotes = [
             "Schnellmaus!",
+            "Schnellmaus!",
+            "Schnellmaus!",
+            "He, nicht so schnell!",
+            "He, nicht übertreiben!",
+            "Mach mal piano!",
             "Viel zu schnell geklickt!",
-            "Jetzt muss ich erst mal rasten"
+            "Jetzt muss ich erst mal rasten..."
         ];
 
         bigtext.innerHTML = diff + " Tage Frosch und Biberl";
 
         bigtext.onclick = function() {
             if(!tooFast) {
-                clickTime = new Date();
+                if (clickState == 0) {
+                    clickTime = new Date();
+                }
                 clickState++;
                 if (clickState == 1) {
                     bigtext.innerHTML = totalMonths + " Monate und " + remainDays + " Tage Frosch und Biberl";
@@ -166,7 +178,7 @@
                 } else {
                     clickState = 0;
                     var elapsed = new Date().getTime() - clickTime.getTime();
-                    if (elapsed < 1000) {
+                    if (elapsed < 500) {
                         tooFast = true;
                         bigtext.innerHTML = speedNotes[getRandomIntInclusive(0, speedNotes.length - 1)];
                         setTimeout(function() {
