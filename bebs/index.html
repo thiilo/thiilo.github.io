@@ -172,9 +172,17 @@
                 }
                 clickState++;
                 if (clickState == 1) {
-                    bigtext.innerHTML = totalMonths + " Monate und " + remainDays + " Tage Frosch und Biberl";
+                    if (remainDays == 0) {
+                        bigtext.innerHTML = totalMonths + " Monate Frosch und Biberl";
+                    } else {
+                        bigtext.innerHTML = totalMonths + " Monate und " + remainDays + " Tage Frosch und Biberl";
+                    }
                 } else if (clickState == 2) {
-                    bigtext.innerHTML = fullYears + " Jahre und " + fullMonths + " Monate Frosch und Biberl";
+                    if(fullMonths == 0) {
+                        bigtext.innerHTML = fullYears + " Jahre Frosch und Biberl";
+                    } else {
+                        bigtext.innerHTML = fullYears + " Jahre und " + fullMonths + " Monate Frosch und Biberl";
+                    }
                 } else {
                     clickState = 0;
                     var elapsed = new Date().getTime() - clickTime.getTime();
@@ -200,8 +208,10 @@
             // Jahrestag!
             if(totalMonths%12 == 0) {
                 document.getElementById("nod").innerHTML = totalMonths/12 + " Jahre Frosch und Biberl";
+                clickState = 2;
             } else {
                 document.getElementById("nod").innerHTML = totalMonths+" Monate Frosch und Biberl";
+                clickState = 1;
             }
             var rand = getRandomIntInclusive(0, notes.length - 1);
             document.getElementById("randim").innerHTML = notes[rand];
