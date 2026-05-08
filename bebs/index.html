@@ -171,6 +171,7 @@
                     clickTime = new Date();
                 }
                 clickState++;
+                // console.log(clickState)
                 if (clickState == 1) {
                     if (remainDays == 0) {
                         bigtext.innerHTML = totalMonths + " Monate Frosch und Biberl";
@@ -185,15 +186,24 @@
                     }
                 } else {
                     clickState = 0;
-                    var elapsed = new Date().getTime() - clickTime.getTime();
-                    if (elapsed < 500) {
-                        tooFast = true;
-                        bigtext.innerHTML = speedNotes[getRandomIntInclusive(0, speedNotes.length - 1)];
-                        setTimeout(function() {
-                            tooFast = false;
+                    if(clickTime != null)  {
+                        // console.log("clickTime not null");
+                        var elapsed = new Date().getTime() - clickTime.getTime();
+                        if (elapsed < 500) {
+                            // console.log("too fast");
+                            tooFast = true;
+                            bigtext.innerHTML = speedNotes[getRandomIntInclusive(0, speedNotes.length - 1)];
+                            setTimeout(function() {
+                                tooFast = false;
+                                clickState = 0;
+                                bigtext.innerHTML = diff + " Tage Frosch und Biberl";
+                            }, 2000);
+                        } else {
+                            // console.log("reset to 0 in clicktime, setting text to days");
                             bigtext.innerHTML = diff + " Tage Frosch und Biberl";
-                        }, 2000);
+                        }
                     } else {
+                        // console.log("reset to 0, setting text to days");
                         bigtext.innerHTML = diff + " Tage Frosch und Biberl";
                     }
                 }
@@ -234,6 +244,8 @@
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1) + min);
         }
+        
+        // console.log(clickState);
     </script>
 </body>
 
